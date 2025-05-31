@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Protected Access</title>
+  <link rel="icon" href="download.png" type="image/x-icon">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #fff0f5, #ffe4e1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h2 {
+      color: #db2777;
+      margin-bottom: 1rem;
+    }
+
+    input[type="password"] {
+      padding: 0.5rem 1rem;
+      border: 2px solid #f472b6;
+      border-radius: 9999px;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    button {
+      margin-top: 1rem;
+      padding: 0.5rem 1.5rem;
+      background-color: #f472b6;
+      color: white;
+      border: none;
+      border-radius: 9999px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #ec4899;
+    }
+
+    #errorMsg {
+      color: red;
+      margin-top: 1rem;
+    }
+
+    .home-button {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: #f472b6;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 9999px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .home-button:hover {
+      background-color: #ec4899;
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="home-button">Home</a>
+
+  <h2>🔒 Enter Password to View Private Gallery</h2>
+  <input type="password" id="password" placeholder="Enter password..." />
+  <button onclick="checkPassword()">Unlock</button>
+  <p id="errorMsg"></p>
+
+  <script>
+    const correctPassword = "mylove123"; // Change this password as needed
+
+    function checkPassword() {
+      const input = document.getElementById("password").value;
+      const errorMsg = document.getElementById("errorMsg");
+
+      if (input === correctPassword) {
+        sessionStorage.setItem("authorized", "true");
+        window.location.href = "image.html";
+      } else {
+        errorMsg.textContent = "❌ Incorrect password. Try again.";
+      }
+    }
+
+    // Always clear session access on page load to prevent retained access
+    window.onload = () => {
+      sessionStorage.removeItem("authorized");
+    };
+
+    // Also clear sessionStorage if user switches tabs or refreshes
+    window.addEventListener("beforeunload", () => {
+      sessionStorage.removeItem("authorized");
+    });
+  </script>
+
+</body>
+</html>

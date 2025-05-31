@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Open When Letters</title>
+  <link rel="icon" href="download.png" type="image/x-icon">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff0f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    h2 {
+      text-align: center;
+      color: #db2777;
+      font-size: 2.5rem;
+      margin: 2rem 0;
+    }
+
+    .envelopes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 0 2rem 3rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .envelope {
+      background: linear-gradient(135deg, #ffe4e6, #fcd5ce);
+      border-radius: 1rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .envelope:hover {
+      transform: translateY(-5px);
+    }
+
+    .envelope-title {
+      font-size: 1.2rem;
+      color: #db2777;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    .envelope-desc {
+      color: #4b5563;
+      font-size: 0.9rem;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+      background-color: rgba(0,0,0,0.6);
+    }
+
+    .modal-content {
+      background: linear-gradient(135deg, #fff1f9, #fde2e4);
+      margin: 10% auto;
+      padding: 2rem;
+      border-radius: 1rem;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+      position: relative;
+      text-align: center;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 1.5rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #000;
+    }
+
+    .home-button {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: #f472b6;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 9999px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      text-decoration: none;
+    }
+
+    .home-button:hover {
+      background-color: #ec4899;
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="home-button">Home</a>
+  <h2>Open When Letters</h2>
+  <div class="envelopes">
+
+    <div class="envelope" onclick="openModal('modal1')">
+      <div class="envelope-title">Open When You're Sad</div>
+      <div class="envelope-desc">A little love to lift your spirits.</div>
+    </div>
+
+    <div class="envelope" onclick="openModal('modal2')">
+      <div class="envelope-title">Open When You Miss Me</div>
+      <div class="envelope-desc">A reminder of our beautiful memories.</div>
+    </div>
+
+    <div class="envelope" onclick="openModal('modal3')">
+      <div class="envelope-title">Open When You're Happy</div>
+      <div class="envelope-desc">To celebrate with even more smiles!</div>
+    </div>
+
+    <div class="envelope" onclick="openModal('modal4')">
+      <div class="envelope-title">Open When It's Your Birthday</div>
+      <div class="envelope-desc">A letter just for your special day.</div>
+    </div>
+
+    <div class="envelope" onclick="openModal('modal5')">
+      <div class="envelope-title">Open When You Need Motivation</div>
+      <div class="envelope-desc">A push to keep you going strong.</div>
+    </div>
+
+    <div class="envelope" onclick="openModal('modal6')">
+      <div class="envelope-title">Open When You Can't Sleep</div>
+      <div class="envelope-desc">A comforting thought to rest easy.</div>
+    </div>
+
+  </div>
+
+  <!-- Modals -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal1')">&times;</span>
+      <p>You’re not alone. I'm always with you.</p>
+      <p>You know na <b>+++++++</b> your another name is <b>******</b> so just like your name be happy not for others but for your self. A smile can make you feel lighter. Just forgot the things that made you sad, be happy by remembering the best moments of that particular thing. Every thing has two faces happy or sad so as a good person you go for happy side.</p>
+    </div>
+  </div>
+
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal2')">&times;</span>
+      <p>Close your eyes and feel the warmth of my presence. I’m just a ring away, You may call me any time whenever you wanted to talk to me.</p>
+    </div>
+  </div>
+
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal3')">&times;</span>
+      <p>Let’s laugh together, even if just in memory. Your joy makes my world brighter. You looks pretier than ever whenever you laugh. Laugh for yourself not for others. Just keep smiling 😊</p>
+    </div>
+  </div>
+
+  <div id="modal4" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal4')">&times;</span>
+      <p>Happy Birthday, my sunshine! Today’s all about you and the beautiful soul you are.</p>
+    </div>
+  </div>
+
+  <div id="modal5" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal5')">&times;</span>
+      <p>You are stronger than you know. Keep going — I believe in you endlessly. Work to make your dreams real. Work for whom you want to see happyu with you success.</p>
+    </div>
+  </div>
+
+  <div id="modal6" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal6')">&times;</span>
+      <p>Count the stars and breathe — I’m whispering love to you in the silence of the night. See the moon and think how beautiful lonly the moon is 🌕</p>
+    </div> 
+  </div>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = "block";
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      if (event.target.classList.contains('modal')) {
+        event.target.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>

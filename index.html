@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday 🎂</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="icon" href="download.png" type="image/x-icon">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(#fff0f5, #ffe4e1);
+      overflow-x: hidden;
+    }
+
+    header h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 3em;
+      color: #e75480;
+      margin-bottom: 0.2em;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 20px;
+    }
+
+    header h1 {
+      font-size: 3em;
+      color: #e75480;
+      margin-bottom: 0.2em;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      background: #ff69b4;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 20px;
+      transition: background 0.3s ease;
+    }
+
+    nav a:hover {
+      background: #ff1493;
+    }
+
+    .cake-center {
+      text-align: center;
+      margin: 40px 0;
+      z-index: 2;
+      position: relative;
+    }
+
+    .cake-center img {
+      width: 420px;
+      max-width: 80%;
+      animation: bounce 2s infinite ease-in-out;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    .hearts,
+    .cakes {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .heart, .cake {
+      position: absolute;
+      animation: floatUp 6s linear infinite;
+    }
+
+    .heart {
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      top: 0;
+      left: -10px;
+    }
+
+    .cake {
+      font-size: 2rem;
+      animation: floatUp 7s ease-in infinite;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts"></div>
+  <div class="cakes"></div>
+
+  <header>
+    <h1>Happy Birthday, Abhishek! 💖</h1>
+    <nav>
+      <a href="friend.html">🫂Our Friendship</a>
+      <a href="open-when.html">💌Open When Letters</a>
+      <a href="gifts.html">🎁Virtual Gift Room</a>
+      <a href="countdown.html">⌛Countdown Surprise</a>
+      <a href="messages.html">💬Messages</a>
+      <a href="secret.html">🔐Secret Folder</a>
+    </nav>
+  </header>
+
+  <!-- Centered Animated Cake -->
+  <div class="cake-center">
+    <a href="wish.html"><img src="cake.png" alt="Birthday Cake" /></a>
+  </div>
+
+  <script>
+    // Floating Heart Animation
+    const heartsContainer = document.querySelector('.hearts');
+    for (let i = 0; i < 30; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+      heartsContainer.appendChild(heart);
+    }
+
+    // Floating Cake Emojis
+    const cakeContainer = document.querySelector('.cakes');
+    const cakeEmojis = ['🎂', '🍰', '🧁'];
+    for (let i = 0; i < 25; i++) {
+      const cake = document.createElement('div');
+      cake.className = 'cake';
+      cake.textContent = cakeEmojis[Math.floor(Math.random() * cakeEmojis.length)];
+      cake.style.left = Math.random() * 100 + 'vw';
+      cake.style.fontSize = `${Math.random() * 20 + 24}px`;
+      cake.style.animationDuration = `${Math.random() * 4 + 4}s`;
+      cake.style.animationDelay = `${Math.random() * 5}s`;
+      cakeContainer.appendChild(cake);
+    }
+  </script>
+</body>
+</html>

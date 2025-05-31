@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Virtual Gift Room</title>
+  <link rel="icon" href="download.png" type="image/x-icon">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(120deg, #fff0f5, #ffe4e1);
+      margin: 0;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    h2 {
+      color: #db2777;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .gifts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .gift {
+      background: #ffeef3; /* lighter baby pink */
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .gift:hover {
+      transform: scale(1.05);
+    }
+
+    .gift-title {
+      color: #e75480;
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    .gift-desc {
+      color: #1a1a1a;
+      font-size: 0.95rem;
+      font-weight: bold;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .modal-content {
+      background: #fffafc;
+      margin: 10% auto;
+      padding: 2rem;
+      border-radius: 1rem;
+      width: 90%;
+      max-width: 500px;
+      position: relative;
+      text-align: center;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .close {
+      color: #aaa;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #000;
+    }
+
+    .home-button {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: #f472b6;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 9999px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      text-decoration: none;
+    }
+
+    .home-button:hover {
+      background-color: #ec4899;
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="home-button">Home</a>
+  <h2>Virtual Gift Room</h2>
+  <div class="gifts">
+    <div class="gift" onclick="openModal('modal1')">
+      <div class="gift-title">💌 A Letter</div>
+      <div class="gift-desc">Words straight from my heart.</div>
+    </div>
+
+    <div class="gift" onclick="openModal('modal3')">
+      <div class="gift-title">📸 Photo Album</div>
+      <div class="gift-desc">A walk through memories.</div>
+    </div>
+
+    <div class="gift" onclick="openModal('modal4')">
+      <div class="gift-title">🤝 A Promise</div>
+      <div class="gift-desc">Of forever, for always, with you.</div>
+    </div>
+  </div>
+
+  <!-- Modals -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal1')">&times;</span>
+      <p>My dearest, every word I write is a piece of my soul, stitched with love and sealed with a trust.</p>
+      <p>I know we never meet in real but other than this we trust each other more than others. I know in now a day this is very difficult to trust in this world but we made this possible. We share every thing with each other and I wanted to tell you that we will be best friends forever. Thank you for your presence in my Life 🧬</p>
+    </div>
+  </div>
+
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal3')">&times;</span>
+      <p>Every photo is a heartbeat of our journey. Let’s relive each one with smiles and love.</p>
+      <p><a href="photos.html">Click Here</a> to view all images</p>
+
+    </div>
+  </div>
+
+  <div id="modal4" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal4')">&times;</span>
+      <p>I promise to love, support, and cherish you through every tomorrow that follows today.</p>
+      <p>I promise to never break your trust.</p>
+      <p>I promise to never leave you.</p>
+      <p>I promise to never to .</p>
+    </div>
+  </div>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = "block";
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      if (event.target.classList.contains('modal')) {
+        event.target.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Messages for You</title>
+  <link rel="icon" href="download.png" type="image/x-icon">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #fff0f5, #ffe4e1);
+      margin: 0;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      color: #db2777;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      text-align: center;
+    }
+
+    .home-button {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: #f472b6;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 9999px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .home-button:hover {
+      background-color: #ec4899;
+    }
+
+    .message-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .message-card {
+      background-color: #fff;
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .message-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .sender {
+      font-weight: bold;
+      color: #db2777;
+      margin-bottom: 0.5rem;
+    }
+
+    .message {
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="home-button">Home</a>
+  <h1>💌 Messages for You</h1>
+
+  <div class="message-grid">
+    <div class="message-card">
+      <div class="sender">From: Mom & Dad</div>
+      <div class="message"><p>You light up every room you walk into. I'm so proud of everything you do. Never stop being you. 💖</p>
+      <p>Become as successfull Women as you want and make all the people quite who don't like you</p></div>
+    </div>
+
+    <div class="message-card">
+      <div class="sender">From: Your Love</div>
+      <div class="message"><p>I may not say it often, but I love you more than words can express. You're my heart. 🥹 You mean the world to me. 💘</p>
+      <p>We both have to try hard to become success for our good future.</p></div>
+    </div>
+
+    <div class="message-card">
+      <div class="sender">From: Your Best Friend</div>
+      <div class="message"><p>Every day with you is a blessing. I can't wait to make more memories together.</p>
+        <p>Just keep smiling and become successfull Women and fulfill your dreams by making them true</p></div>
+    </div>
+
+    <!-- Add more messages below -->
+  </div>
+</body>
+</html>
